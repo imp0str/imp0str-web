@@ -23,7 +23,7 @@ assert(/img\s*\{[^}]*height:\s*auto/.test(css), 'Global image aspect-ratio safeg
 for (const match of html.matchAll(/(?:src|href)="([^"#][^"]*)"/g)) {
   const target = match[1];
   if (/^(?:https?:|mailto:)/.test(target)) continue;
-  assert(fs.existsSync(path.join(root, target)), `Missing local asset: ${target}`);
+  assert(fs.existsSync(path.join(root, target.split(/[?#]/, 1)[0])), `Missing local asset: ${target}`);
 }
 
 const routeKeys = new Set([...routes.matchAll(/^\s{2}([A-Za-z][A-Za-z0-9]*):/gm)].map((match) => match[1]));

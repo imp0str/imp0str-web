@@ -52,7 +52,7 @@ h1 em { color: var(--purple-bright); font-style: normal; }
 .button-secondary:hover { border-color: var(--eye); color: var(--eye); }
 .hero-mark { align-self: stretch; min-height: 430px; position: relative; display: flex; align-items: center; justify-content: center; border-left: 1px solid var(--line); overflow: hidden; }
 .hero-mark::before { content: ''; position: absolute; width: 310px; aspect-ratio: 1; border: 1px solid rgba(155,92,255,.35); border-radius: 50%; box-shadow: 0 0 100px rgba(155,92,255,.1), inset 0 0 80px rgba(155,92,255,.08); }
-.hero-mark img { position: relative; z-index: 1; width: min(92%, 440px); filter: saturate(.86) drop-shadow(0 26px 70px rgba(0,0,0,.55)); }
+.hero-mark img { position: relative; z-index: 1; width: min(92%, 440px); height: auto; filter: saturate(.86) drop-shadow(0 26px 70px rgba(0,0,0,.55)); }
 .signal-label { position: absolute; top: 8px; right: 0; color: var(--muted); font: 10px var(--mono); letter-spacing: .16em; }
 .signal-line { position: absolute; bottom: 8px; inset-inline: 30px 0; display: flex; align-items: center; gap: 12px; color: var(--eye); font: 10px var(--mono); }
 .signal-line b { height: 1px; flex: 1; background: linear-gradient(90deg, var(--purple), var(--eye)); }
@@ -105,7 +105,7 @@ h2 { margin-bottom: 0; font-size: clamp(44px, 6vw, 76px); }
 .process p { margin: 0; color: var(--muted); font-size: 14px; }
 
 .contact { min-height: 420px; position: relative; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; margin-bottom: 40px; padding: clamp(40px, 7vw, 80px); overflow: hidden; color: var(--ink); background: var(--purple-bright); }
-.contact img { position: absolute; right: 17%; bottom: -54%; width: 420px; opacity: .12; filter: grayscale(1) contrast(1.7); }
+.contact img { position: absolute; right: 17%; bottom: -54%; width: 420px; height: auto; opacity: .12; filter: grayscale(1) contrast(1.7); }
 .contact h2 { position: relative; margin-bottom: 24px; font-size: clamp(46px, 6vw, 78px); }
 .contact p { position: relative; max-width: 590px; margin-bottom: 0; }
 .contact .eyebrow { color: #3a174d; }
