@@ -10,10 +10,10 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
-assert(!fs.existsSync(path.join(root, 'CNAME')), 'CNAME must not exist before Web domain activation');
-assert(!html.includes('web.imp0str.dev') && !routes.includes('web.imp0str.dev'), 'Premature Web custom domain');
+assert(fs.readFileSync(path.join(root, 'CNAME'), 'utf8').trim() === 'web.imp0str.dev', 'Working Web CNAME changed');
 assert(routes.includes("hub: 'https://imp0str.dev'"), 'Hub route missing');
 assert(routes.includes("game: 'https://game.imp0str.dev'"), 'Game route missing');
+assert(routes.includes("web: 'https://web.imp0str.dev'"), 'Web production route missing');
 assert(html.includes('Independent redesign proposal'), 'Segrest disclosure missing');
 assert(html.includes('Personal application project'), 'PersonaPal disclosure missing');
 assert(html.includes('imp0str.dev@gmail.com'), 'Contact email missing');
