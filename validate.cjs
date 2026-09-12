@@ -18,6 +18,7 @@ assert(html.includes('Independent redesign proposal'), 'Segrest disclosure missi
 assert(html.includes('Personal application project'), 'PersonaPal disclosure missing');
 assert(html.includes('imp0str.dev@gmail.com'), 'Contact email missing');
 assert(css.includes('prefers-reduced-motion'), 'Reduced-motion support missing');
+assert(/img\s*\{[^}]*height:\s*auto/.test(css), 'Global image aspect-ratio safeguard missing');
 
 for (const match of html.matchAll(/(?:src|href)="([^"#][^"]*)"/g)) {
   const target = match[1];
